@@ -1,8 +1,13 @@
 import json
 
 
-def generate_diff(file_path1, file_path2):
+def replace_value(value):
+    if isinstance(value, bool):
+        return str(value).lower()
+    return value
 
+
+def generate_diff(file_path1, file_path2):
     json1 = json.load(open(file_path1))
     json2 = json.load(open(file_path2))
 
@@ -26,7 +31,7 @@ def generate_diff(file_path1, file_path2):
 
     replaces = {1: '-', 2: '+', 0: ' '}
     lines = [
-        f'  {replaces[place]} {key}: {value}'
+        f'  {replaces[place]} {key}: {replace_value(value)}'
         for key, place, value
         in items
     ]

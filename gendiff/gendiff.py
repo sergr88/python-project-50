@@ -8,16 +8,16 @@ def replaced_bool(value):
 
 
 def generate_diff(file_path1, file_path2):
-    json1, json2 = parse_files(file_path1, file_path2)
+    properties1, properties2 = parse_files(file_path1, file_path2)
 
     diff1 = [
-        (' ' if value == json2.get(key) else '-', key, value)
-        for key, value in json1.items()
+        (' ' if value == properties2.get(key) else '-', key, value)
+        for key, value in properties1.items()
     ]
     diff2 = [
         ('+', key, value)
-        for key, value in json2.items()
-        if value != json1.get(key)
+        for key, value in properties2.items()
+        if value != properties1.get(key)
     ]
     difference = sorted(diff1 + diff2, key=itemgetter(1))
 

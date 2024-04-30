@@ -11,3 +11,11 @@ def test_plain_json():
             os.path.join(BASE_PATH, 'flat_input1.json'),
             os.path.join(BASE_PATH, 'flat_input2.json')
         ) == input_file.read()
+
+
+def test_plain_yaml():
+    with open(os.path.join(BASE_PATH, 'result.txt')) as input_file:
+        assert generate_diff(
+            os.path.join(BASE_PATH, 'flat_input1.yaml'),
+            os.path.join(BASE_PATH, 'flat_input2.yaml')
+        ) == input_file.read()

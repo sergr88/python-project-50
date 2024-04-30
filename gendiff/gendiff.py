@@ -1,5 +1,6 @@
-import json
 from operator import itemgetter
+
+from gendiff.parse_files import parse_files
 
 
 def replaced_bool(value):
@@ -7,8 +8,7 @@ def replaced_bool(value):
 
 
 def generate_diff(file_path1, file_path2):
-    json1 = json.load(open(file_path1))
-    json2 = json.load(open(file_path2))
+    json1, json2 = parse_files(file_path1, file_path2)
 
     diff1 = [
         (' ' if value == json2.get(key) else '-', key, value)

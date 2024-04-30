@@ -8,7 +8,7 @@ test:
 	poetry run pytest
 
 test-coverage:
-	poetry run pytest --cov
+	poetry run pytest --cov --cov-report=term-missing
 
 test-coverage-all:
 	poetry run pytest --cov=gendiff

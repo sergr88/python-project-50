@@ -1,10 +1,7 @@
 from operator import itemgetter
 
-from gendiff.parse_files import parse_files
-
-
-def replaced_bool(value):
-    return str(value).lower() if isinstance(value, bool) else value
+from gendiff.formatters import format_stylishly
+from gendiff.parsers import parse_files
 
 
 def generate_diff(file_path1, file_path2):
@@ -21,9 +18,4 @@ def generate_diff(file_path1, file_path2):
     ]
     difference = sorted(diff1 + diff2, key=itemgetter(1))
 
-    lines = [
-        f'  {prefix} {key}: {replaced_bool(value)}'
-        for prefix, key, value
-        in difference
-    ]
-    return '\n'.join(['{', *lines, '}'])
+    return format_stylishly(difference)

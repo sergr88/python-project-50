@@ -1,7 +1,9 @@
 from operator import itemgetter
 
-from gendiff.formatters import format_stylishly
+from gendiff.formatters import format_difference
 from gendiff.parsers import parse_files
+
+DEFAULT_OUTPUT_FORMAT = 'stylish'
 
 
 def is_dict(value):
@@ -30,7 +32,8 @@ def calculate_difference(properties1, properties2):
     return sorted(diff1 + diff2, key=itemgetter(1))
 
 
-def generate_diff(file_path1, file_path2):
+def generate_diff(file_path1, file_path2, output_format=DEFAULT_OUTPUT_FORMAT):
     properties1, properties2 = parse_files(file_path1, file_path2)
     difference = calculate_difference(properties1, properties2)
-    return format_stylishly(difference)
+    formatted_difference = format_difference(difference, output_format)
+    return formatted_difference

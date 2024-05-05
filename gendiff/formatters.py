@@ -1,11 +1,24 @@
-def replaced_bool(value):
-    return str(value).lower() if isinstance(value, bool) else value
-
-
 def format_stylishly(difference):
-    lines = [
-        f'  {prefix} {key}: {replaced_bool(value)}'
-        for prefix, key, value
-        in difference
-    ]
-    return '\n'.join(['{', *lines, '}'])
+    def format_node(node, level):
+        match node:
+            case None:
+                return 'null'
+            case bool():
+                return str(node).lower()
+            case list():
+                return format_nodes(node, level)
+            case dict():
+                nodes = [(' ', key, value) for key, value in node.items()]
+                return format_nodes(nodes, level)
+            case _:
+                return node
+
+    def format_nodes(nodes, level):
+        indent = ' ' * (level * 4)
+        lines = []
+        for prefix, key, value in nodes:
+            formatted_node = format_node(value, level + 1)
+            lines.append(f'{indent}  {prefix} {key}: {formatted_node}')
+        return '\n'.join(['{', *lines, f'{indent}}}'])
+
+    return format_nodes(difference, 0)

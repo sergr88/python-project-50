@@ -5,33 +5,37 @@ from gendiff import generate_diff
 BASE_PATH = os.path.join('tests', 'fixtures')
 
 
-def test_plain_json():
-    with open(os.path.join(BASE_PATH, 'flat_result.txt')) as input_file:
+def test_flat_json_stylish_format():
+    with open(os.path.join(BASE_PATH, 'flat_stylish_out.txt')) as input_file:
         difference = generate_diff(
-            os.path.join(BASE_PATH, 'flat_input1.json'),
-            os.path.join(BASE_PATH, 'flat_input2.json'))
+            os.path.join(BASE_PATH, 'flat_in1.json'),
+            os.path.join(BASE_PATH, 'flat_in2.json'),
+            'stylish')
         assert difference == input_file.read()
 
 
-def test_plain_yaml():
-    with open(os.path.join(BASE_PATH, 'flat_result.txt')) as input_file:
+def test_flat_yaml_stylish_format():
+    with open(os.path.join(BASE_PATH, 'flat_stylish_out.txt')) as input_file:
         difference = generate_diff(
-            os.path.join(BASE_PATH, 'flat_input1.yaml'),
-            os.path.join(BASE_PATH, 'flat_input2.yaml'))
+            os.path.join(BASE_PATH, 'flat_in1.yaml'),
+            os.path.join(BASE_PATH, 'flat_in2.yaml'),
+            'stylish')
         assert difference == input_file.read()
 
 
-def test_nested_json():
-    with open(os.path.join(BASE_PATH, 'nested_result.txt')) as input_file:
+def test_nested_json_stylish_format():
+    with open(os.path.join(BASE_PATH, 'nested_stylish_out.txt')) as input_file:
         difference = generate_diff(
-            os.path.join(BASE_PATH, 'nested_input1.json'),
-            os.path.join(BASE_PATH, 'nested_input2.json'))
+            os.path.join(BASE_PATH, 'nested_in1.json'),
+            os.path.join(BASE_PATH, 'nested_in2.json'),
+            'stylish')
         assert difference == input_file.read()
 
 
-def test_nested_yaml():
-    with open(os.path.join(BASE_PATH, 'nested_result.txt')) as input_file:
+def test_nested_yaml_stylish_format():
+    with open(os.path.join(BASE_PATH, 'nested_stylish_out.txt')) as input_file:
         difference = generate_diff(
-            os.path.join(BASE_PATH, 'nested_input1.yaml'),
-            os.path.join(BASE_PATH, 'nested_input2.yaml'))
+            os.path.join(BASE_PATH, 'nested_in1.yaml'),
+            os.path.join(BASE_PATH, 'nested_in2.yaml'),
+            'stylish')
         assert difference == input_file.read()

@@ -22,11 +22,3 @@ def format_stylishly(difference):
         return '\n'.join(['{', *lines, f'{indent}}}'])
 
     return format_nodes(difference, 0)
-
-
-def format_difference(difference, output_format):
-    match output_format:
-        case 'stylish':
-            return format_stylishly(difference)
-        case _:
-            return f'Output format "{output_format}" is not implemented'

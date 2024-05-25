@@ -41,6 +41,15 @@ def test_flat_yaml_plain_format():
         assert difference == input_file.read()
 
 
+def test_flat_yaml_json_format():
+    with open(os.path.join(BASE_PATH, 'flat_json_out.txt')) as input_file:
+        difference = generate_diff(
+            os.path.join(BASE_PATH, 'flat_in1.yaml'),
+            os.path.join(BASE_PATH, 'flat_in2.yaml'),
+            'json')
+        assert difference == input_file.read()
+
+
 def test_nested_json_stylish_format():
     with open(os.path.join(BASE_PATH, 'nested_stylish_out.txt')) as input_file:
         difference = generate_diff(
@@ -74,4 +83,13 @@ def test_nested_yaml_plain_format():
             os.path.join(BASE_PATH, 'nested_in1.yaml'),
             os.path.join(BASE_PATH, 'nested_in2.yaml'),
             'plain')
+        assert difference == input_file.read()
+
+
+def test_nested_yaml_json_format():
+    with open(os.path.join(BASE_PATH, 'nested_json_out.txt')) as input_file:
+        difference = generate_diff(
+            os.path.join(BASE_PATH, 'nested_in1.yaml'),
+            os.path.join(BASE_PATH, 'nested_in2.yaml'),
+            'json')
         assert difference == input_file.read()

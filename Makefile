@@ -1,6 +1,15 @@
 install:
 	uv sync
 
+build:
+	uv build
+
+package-install:
+	uv tool install .
+
+package-uninstall:
+	uv tool uninstall hexlet-code
+
 lint:
 	uv run flake8 gendiff tests
 

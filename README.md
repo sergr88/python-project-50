@@ -32,9 +32,25 @@
 ```shell
 make install
 ```
+#### Сборка пакета
+```shell
+make build
+```
+#### Установка пакета
+```shell
+make package-install
+```
+#### Удаление пакета
+```shell
+make package-uninstall
+```
 #### Проверка линтером
 ```shell
 make lint
+```
+#### Форматирование кода
+```shell
+make format
 ```
 #### Выполнение тестов
 ```shell

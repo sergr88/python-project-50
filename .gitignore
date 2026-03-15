@@ -4,8 +4,7 @@
 # Python
 .venv/
 __pycache__/
-
-# Coverage
+dist/
 .coverage
 coverage.xml
 .pytest_cache/

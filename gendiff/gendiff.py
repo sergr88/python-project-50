@@ -35,5 +35,4 @@ def calculate_difference(properties1, properties2):
 def generate_diff(file_path1, file_path2, output_format=DEFAULT_OUTPUT_FORMAT):
     properties1, properties2 = parse_files(file_path1, file_path2)
     difference = calculate_difference(properties1, properties2)
-    formatted_difference = format_difference(difference, output_format)
-    return formatted_difference
+    return format_difference(difference, output_format)

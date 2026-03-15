@@ -11,7 +11,13 @@ package-uninstall:
 	uv tool uninstall hexlet-code
 
 lint:
-	uv run flake8 gendiff tests
+	uv run ruff check
+
+lint-fix:
+	uv run ruff check --fix
+
+format:
+	uv run ruff format
 
 test:
 	uv run pytest

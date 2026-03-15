@@ -6,90 +6,120 @@ BASE_PATH = os.path.join('tests', 'fixtures')
 
 
 def test_flat_json_stylish_format():
-    with open(os.path.join(BASE_PATH, 'flat_stylish_out.txt')) as input_file:
+    with open(
+        os.path.join(BASE_PATH, 'flat_stylish_out.txt'), encoding='utf-8'
+    ) as input_file:
         difference = generate_diff(
             os.path.join(BASE_PATH, 'flat_in1.json'),
             os.path.join(BASE_PATH, 'flat_in2.json'),
-            'stylish')
+            'stylish',
+        )
         assert difference == input_file.read()
 
 
 def test_flat_json_plain_format():
-    with open(os.path.join(BASE_PATH, 'flat_plain_out.txt')) as input_file:
+    with open(
+        os.path.join(BASE_PATH, 'flat_plain_out.txt'), encoding='utf-8'
+    ) as input_file:
         difference = generate_diff(
             os.path.join(BASE_PATH, 'flat_in1.json'),
             os.path.join(BASE_PATH, 'flat_in2.json'),
-            'plain')
+            'plain',
+        )
         assert difference == input_file.read()
 
 
 def test_flat_yaml_stylish_format():
-    with open(os.path.join(BASE_PATH, 'flat_stylish_out.txt')) as input_file:
+    with open(
+        os.path.join(BASE_PATH, 'flat_stylish_out.txt'), encoding='utf-8'
+    ) as input_file:
         difference = generate_diff(
             os.path.join(BASE_PATH, 'flat_in1.yaml'),
             os.path.join(BASE_PATH, 'flat_in2.yaml'),
-            'stylish')
+            'stylish',
+        )
         assert difference == input_file.read()
 
 
 def test_flat_yaml_plain_format():
-    with open(os.path.join(BASE_PATH, 'flat_plain_out.txt')) as input_file:
+    with open(
+        os.path.join(BASE_PATH, 'flat_plain_out.txt'), encoding='utf-8'
+    ) as input_file:
         difference = generate_diff(
             os.path.join(BASE_PATH, 'flat_in1.yaml'),
             os.path.join(BASE_PATH, 'flat_in2.yaml'),
-            'plain')
+            'plain',
+        )
         assert difference == input_file.read()
 
 
 def test_flat_yaml_json_format():
-    with open(os.path.join(BASE_PATH, 'flat_json_out.txt')) as input_file:
+    with open(
+        os.path.join(BASE_PATH, 'flat_json_out.txt'), encoding='utf-8'
+    ) as input_file:
         difference = generate_diff(
             os.path.join(BASE_PATH, 'flat_in1.yaml'),
             os.path.join(BASE_PATH, 'flat_in2.yaml'),
-            'json')
+            'json',
+        )
         assert difference == input_file.read()
 
 
 def test_nested_json_stylish_format():
-    with open(os.path.join(BASE_PATH, 'nested_stylish_out.txt')) as input_file:
+    with open(
+        os.path.join(BASE_PATH, 'nested_stylish_out.txt'), encoding='utf-8'
+    ) as input_file:
         difference = generate_diff(
             os.path.join(BASE_PATH, 'nested_in1.json'),
             os.path.join(BASE_PATH, 'nested_in2.json'),
-            'stylish')
+            'stylish',
+        )
         assert difference == input_file.read()
 
 
 def test_nested_json_plain_format():
-    with open(os.path.join(BASE_PATH, 'nested_plain_out.txt')) as input_file:
+    with open(
+        os.path.join(BASE_PATH, 'nested_plain_out.txt'), encoding='utf-8'
+    ) as input_file:
         difference = generate_diff(
             os.path.join(BASE_PATH, 'nested_in1.json'),
             os.path.join(BASE_PATH, 'nested_in2.json'),
-            'plain')
+            'plain',
+        )
         assert difference == input_file.read()
 
 
 def test_nested_yaml_stylish_format():
-    with open(os.path.join(BASE_PATH, 'nested_stylish_out.txt')) as input_file:
+    with open(
+        os.path.join(BASE_PATH, 'nested_stylish_out.txt'), encoding='utf-8'
+    ) as input_file:
         difference = generate_diff(
             os.path.join(BASE_PATH, 'nested_in1.yaml'),
             os.path.join(BASE_PATH, 'nested_in2.yaml'),
-            'stylish')
+            'stylish',
+        )
         assert difference == input_file.read()
 
 
 def test_nested_yaml_plain_format():
-    with open(os.path.join(BASE_PATH, 'nested_plain_out.txt')) as input_file:
+    with open(
+        os.path.join(BASE_PATH, 'nested_plain_out.txt'), encoding='utf-8'
+    ) as input_file:
         difference = generate_diff(
             os.path.join(BASE_PATH, 'nested_in1.yaml'),
             os.path.join(BASE_PATH, 'nested_in2.yaml'),
-            'plain')
+            'plain',
+        )
         assert difference == input_file.read()
 
 
 def test_nested_yaml_json_format():
-    with open(os.path.join(BASE_PATH, 'nested_json_out.txt')) as input_file:
+    with open(
+        os.path.join(BASE_PATH, 'nested_json_out.txt'), encoding='utf-8'
+    ) as input_file:
         difference = generate_diff(
             os.path.join(BASE_PATH, 'nested_in1.yaml'),
             os.path.join(BASE_PATH, 'nested_in2.yaml'),
-            'json')
+            'json',
+        )
         assert difference == input_file.read()

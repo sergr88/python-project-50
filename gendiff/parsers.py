@@ -8,9 +8,12 @@ def parse_file(file_path):
     _, extension = os.path.splitext(file_path)
     match extension.lower():
         case '.json':
-            return json.load(open(file_path))
+            return json.load(open(file_path, encoding='utf-8'))
         case '.yaml' | '.yml':
-            return yaml.load(open(file_path), Loader=yaml.Loader)
+            return yaml.load(
+                open(file_path, encoding='utf-8'),
+                Loader=yaml.Loader,
+            )
         case _:
             return ''
 

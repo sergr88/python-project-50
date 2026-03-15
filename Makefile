@@ -1,17 +1,17 @@
 install:
-	poetry install
+	uv sync
 
 lint:
-	poetry run flake8 gendiff tests
+	uv run flake8 gendiff tests
 
 test:
-	poetry run pytest
+	uv run pytest
 
 test-coverage:
-	poetry run pytest --cov --cov-report=term-missing
+	uv run pytest --cov --cov-report=term-missing
 
 test-coverage-all:
-	poetry run pytest --cov=gendiff --cov-report=term-missing
+	uv run pytest --cov=gendiff --cov-report=term-missing
 
 test-coverage-xml:
-	poetry run pytest --cov --cov-report xml
+	uv run pytest --cov --cov-report xml
